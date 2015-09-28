@@ -49,6 +49,9 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.5.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.3.0)
     builder (3.2.2)
     byebug (6.0.2)
     debug_inspector (0.0.2)
@@ -118,11 +121,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.4)
-    rails_stdout_logging (0.0.4)
     railties (4.2.4)
       actionpack (= 4.2.4)
       activesupport (= 4.2.4)
@@ -179,6 +177,7 @@ DEPENDENCIES
   angular-rails-templates (~> 0.2.0)
   angular_rails_csrf (~> 1.0.3)
   autoprefixer-rails (~> 6.0.3)
+  bootstrap-sass (~> 3.3.5.1)
   byebug
   devise (~> 3.5.1)
   haml-rails (~> 0.9.0)
@@ -186,7 +185,6 @@ DEPENDENCIES
   jc-validates_timeliness (~> 3.1.1)
   pg
   rails (= 4.2.4)
-  rails_12factor (~> 0.0.3)
   responders (~> 2.1.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

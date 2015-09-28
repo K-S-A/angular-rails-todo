@@ -8,6 +8,7 @@ gem 'rails', '4.2.4'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.5.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -19,7 +20,6 @@ gem 'responders', '~> 2.1.0'
 gem 'haml-rails', '~> 0.9.0'
 
 gem 'autoprefixer-rails', '~> 6.0.3'
-gem 'rails_12factor', '~> 0.0.3'
 
 gem 'jc-validates_timeliness', '~> 3.1.1'
 
