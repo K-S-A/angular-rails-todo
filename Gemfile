@@ -39,6 +39,11 @@ gem 'devise', '~> 3.5.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.3.3'
+  gem 'capybara', '~> 2.5.0'
+  gem 'selenium-webdriver', '~> 2.47.1'
+  gem 'fuubar', '~> 2.0.0'
+  gem 'coderay', '~> 1.1.0'
 end
 
 group :development do
@@ -49,3 +54,11 @@ group :development do
   gem 'spring'
 end
 
+
+group :test do
+  gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'faker', '~> 1.5.0'
+  gem 'database_cleaner', '~> 1.5.0'
+  gem 'shoulda-matchers', '~> 2.8.0'
+  gem 'valid_email', '~> 0.0.11'
+end
