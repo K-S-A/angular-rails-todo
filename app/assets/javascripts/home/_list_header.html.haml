@@ -1,4 +1,4 @@
-%div{data: {ng_repeat: "sort in sorting", ng_class: "'col-md-' + sort.col", ng_click: "orderList(sort.name, item)"}}
+%div{style: "cursor: pointer;", data: {ng_repeat: "sort in sorting", ng_class: "'col-md-' + sort.col", ng_click: "orderList(sort.name, item)"}}
   %h4.text-capitalize{align: "center"}
     {{sort.name}}
     %span.glyphicon.glyphicon-sort{data: {ng_hide: "order[item]"}}

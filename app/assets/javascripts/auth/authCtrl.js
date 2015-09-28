@@ -15,9 +15,7 @@ angular.module('todoList')
       });
     };
     $scope.logout = function() {
-      Auth.logout().then(function(oldUser) {
-        alert(oldUser + "you're signed out now.");
-      });
+      Auth.logout()
     }
   }
 ]);
