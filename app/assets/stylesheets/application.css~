@@ -11,8 +11,6 @@
  * file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap
- *= require jquery-bar-rating/dist/themes/bars-movie
- *= require angular-bootstrap-datepicker
  *= require_tree .
  *= require_self
  */
