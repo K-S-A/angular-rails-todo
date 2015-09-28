@@ -1,0 +1,57 @@
+/ Notice
+.alert.alert-success.fade.in{data: {ng_show: "notice", ui_sref: "home"}}
+  %strong Success!
+  {{message}} (Click here to see Todos List)
+.panel.panel-info
+  .panel-heading
+    %form{name: "todoForm", role: "form", data: {ng_submit: "addTodo()"}, novalidate: true}
+      %fieldset{data: {ng_disabled: "notice"}}
+        .row
+          / Title
+          .form-group.col-md-6{data: {ng_class: "valClass('title')"}}
+            %label{for: "title"} Title:
+            %input.form-control{name: "title", type: "text", required: true, data: {ng_model: "todo.title"}}/
+            %p.text-danger{data: {ng_show: "todoForm.title.$invalid && todoForm.title.$dirty"}} Title is required.
+          / Date
+          .form-group.col-md-6{data: {ng_class: "valClass('date')"}}
+            %label{for: "date"} Due Date:
+            .input-group
+              %input#date.form-control{close_text: "Close", name: "date", type: "text", required: true, data: {date_disabled: "disabled(date, mode)",
+              datepicker_options: "dateOptions",
+              datepicker_popup: "dd-MM-yyyy",
+              is_open: "opened",
+              max_date: "maxDate",
+              min_date: "minDate",
+              ng_model: "todo.due_date"}}/
+              %span.input-group-btn
+                %button.btn.btn-default{type: "button", data: {ng_click: "open($event)"}}
+                  %i.glyphicon.glyphicon-calendar
+            %p.text-danger{data: {ng_show: "todoForm.date.$invalid && todoForm.date.$dirty"}} Due Date is required.
+        .row
+          / Status
+          .form-group.col-md-6
+            %label{for: "status"} Status:
+            %select#status.form-control.text-capitalize{data: {ng_model: "todo.status"}}
+              %option{data: {ng_repeat: "status in statuses"}} {{status}}
+          / Priority
+          .form-group.col-md-6
+            %label{for: "priority"} Priority:
+            %select#priority.form-control{data: {ng_model: "todo.priority"}}
+              %option{data: {ng_repeat: "num in [0, 1, 2, 3, 4, 5]"}} {{num}}
+        .row
+          / Description
+          .form-group.col-md-12{data: {ng_class: "valClass('description')"}}
+            %label{for: "description"} Description:
+            %textarea.form-control{name: "description", rows: "3", required: true, data: {ng_maxlength: "255", ng_minlength: "10", ng_model: "todo.description"}}
+            %p.text-danger{ng_show: "todoForm.description.$error.required && todoForm.description.$dirty"} Description is required.
+            %p.text-danger{ng_show: "todoForm.description.$error.minlength"} Description must contain at least 10 characters.
+            %p.text-danger{ng_show: "todoForm.description.$error.maxlength"} Descriptions maximum size is 255 characters.
+          / Buttons
+          .btn-group.btn-group-justified.col-md-12
+            .btn-group
+              %button.btn.btn-info{type: "button", data: {ng_click: "resetForm()"}} Reset
+            .btn-group
+              %button.btn.btn-info{type: "button", data: {ui_sref: "home"}} Close
+          .btn-group.btn-group-justified.col-md-12
+            .btn-group
+              %button.btn.btn-danger{type: "submit", data: {ng_disabled: "todoForm.$invalid"}} {{submitButton}} Todo

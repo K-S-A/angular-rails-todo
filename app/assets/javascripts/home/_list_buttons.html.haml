@@ -1,0 +1,2 @@
+.btn-group.btn-group-justified{data: {ng_repeat: "buttons in buttonsGroup"}}
+  %p{data: {ng_repeat: "button in buttons.buttons", ng_click: "$eval(button[1])", ng_class: "buttons.buttonStyle"}} {{button[0]}}

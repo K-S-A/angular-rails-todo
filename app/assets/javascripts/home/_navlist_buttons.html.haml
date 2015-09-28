@@ -1,0 +1,5 @@
+.row
+  .col-md-8.col-md-offset-2
+    .btn-group.btn-group-justified
+      %p.btn.btn-warning{data: {ng_repeat: "status in statuses", ng_click: "toggleLists([status])"}} {{(hideList[status]) ? 'Show' : 'Hide' }} {{status | uppercase}} Todos
+      %p.btn.btn-warning{data: {ng_click: "toggleLists(statuses)"}} Toggle All Lists

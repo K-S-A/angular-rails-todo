@@ -1,0 +1,22 @@
+%div{data: {ng_include: "'home/_navlist_buttons.html'", ng_show: "user"}}
+.alert.alert-warning.fade.in{data: {ng_click: "alert = null", ng_show: "alert", ui_sref: "home"}}
+  %strong Success!
+  {{alert}} (Click here to close.)
+%ul{data: {ng_repeat: "item in statuses"}}
+  %li.list-unstyled{data: {ng_hide: "hideList[item]"}}
+    %h1.text-capitalize {{item}} Todos
+    %div{data: {ng_include: "'home/_list_buttons.html'", ng_show: "emptyList(item)"}}
+    .row{data: {ng_include: "'home/_list_header.html'", ng_show: "emptyList(item)"}}
+    .panel.panel-warning.panel-heading{align: 'center', data: {ng_hide: "emptyList(item)"}}
+      No items yet.
+      %a{href: "#/newTodo", data: {ng_show: "user"}} Try to add new todo!
+      %a{href: "#/register", data: {ng_hide: "user"}} Register
+      %a{href: "#/login", data: {ng_hide: "user"}} or login to add new items.
+    %ul.list-unstyled.panel-group{style: "position: relative; min-height: 20px;", data: {dnd_list: "todos"}}
+      %li{data: {ng_include: "'todos/_todo.html'",
+      ng_class: "(item == 'active') ? 'panel panel-info' : 'panel panel-default'",
+      ng_repeat: "todo in todos | filter : {status: item} | orderBy : order[item]",
+      dnd_draggable: "todo",
+      dnd_dragstart: "orderList(null, item);",
+      dnd_effect_allowed: "move",
+      dnd_moved: "todos.splice($index, 1)"}}

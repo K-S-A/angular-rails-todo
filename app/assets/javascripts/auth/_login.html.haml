@@ -1,0 +1,12 @@
+.panel.panel-info
+  .panel-heading
+    %h1 Log In
+  .panel-body
+    %form{data: {ng_submit: "login()"}}
+      .input-group.form-group
+        %label{for: "email"} E-mail:
+        %input#email.form-control{type: "email", placeholder: "Email", data: {ng_model: "user.email"}}/
+      .input-group.form-group
+        %label{for: "password"} Password:
+        %input#password.form-control{type: "password", placeholder: "Password", data: {ng_model: "user.password"}}/
+      %input.btn.btn-default.btn-lg{type: "submit", value: "Log In"}

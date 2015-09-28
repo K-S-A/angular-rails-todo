@@ -1,0 +1,12 @@
+.panel.panel-primary
+  .panel-heading
+    .row
+      .col-md-6
+        %span Title: "{{todo.title}}"
+      .col-md-2
+        %span.label.label-info Status: {{todo.status}}
+      .col-md-2
+        %span.label.label-danger Due Date: {{todo.due_date | date}}
+      .col-md-2
+        %span.badge Priority: {{todo.priority}}
+  .panel-body Description: "{{todo.description}}"

@@ -1,0 +1,11 @@
+//= require angular
+//= require AngularDevise
+//= require angular-bootstrap-affix
+//= require angular-drag-and-drop-lists
+//= require angular-rails-templates
+//= require angular-ui-router
+//= require underscore
+//= require angular-bootstrap
+//= require angular-underscore-module
+//= require todoApp
+//= require_tree .

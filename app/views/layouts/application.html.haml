@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Todo List
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body{data: {ng_app: "todoList"}}
+    .container-fluid
+      %div{data: {ng_include: "'nav/_nav.html'"}}
+      .jumbotron
+        %h1
+          Todo List
+      %nav.navbar.navbar-inverse{data: {bs_affix: "", offset_top: "200"}}
+        .container-fluid
+          .navbar-header
+            %a.navbar-brand{data: {ui_sref: "home"}} AngularRailsToDoList
+          %div
+            %ul.nav.navbar-nav
+              %li.active
+                %a{data: {ui_sref: "home"}} Home
+              %li
+                %a{data: {ui_sref: "newTodo", ng_show: "user"}} Add Todo Item
+                %a{data: {ng_hide: "user"}} Login to Add Todo Item
+      .row
+        .col-md-8.col-md-offset-2
+          %ui-view

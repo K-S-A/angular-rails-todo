@@ -1,0 +1,14 @@
+.panel-heading{data: {ng_dblclick: "todoShow(todo)", ng_mouseenter: "todo.showPanel=true", ng_mouseleave: "todo.showPanel=false"}}
+  .row
+    .col-md-9
+      %span
+        %input{type: "checkbox", data: {ng_model: "todo.selected"}}/
+      %a{href: "#/todos/{{todo.id}}"} {{todo.title}}
+      %span.btn.btn-xs.btn-danger{data: {ng_click: "destroyTodo(todo.id)", ng_show: "todo.showPanel"}} Destroy
+      %span.btn.btn-xs.btn-primary{data: {ui_sref: "editTodo({id: todo.id})", ng_show: "todo.showPanel"}} Edit
+    .col-md-2
+      %span.label.label-danger {{todo.due_date | date}}
+    .col-md-1
+      %span.badge {{todo.priority}}
+.panel-body{data: {ng_show: "todo.show"}}
+  {{todo.description}}

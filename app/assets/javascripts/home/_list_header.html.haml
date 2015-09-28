@@ -1,0 +1,6 @@
+%div{data: {ng_repeat: "sort in sorting", ng_class: "'col-md-' + sort.col", ng_click: "orderList(sort.name, item)"}}
+  %h4.text-capitalize{align: "center"}
+    {{sort.name}}
+    %span.glyphicon.glyphicon-sort{data: {ng_hide: "order[item]"}}
+    %span{data: {ng_class: "(order[item] === sort.name) ? sort.icon : ''"}}
+    %span{data: {ng_class: "(order[item] === ('-' + sort.name)) ? (sort.icon + '-alt') : ''"}}
