@@ -65,7 +65,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.smtp_settings = {
     address: "smtp.yandex.ru",
-    port: 465,
+    port: 587,
     domain: "yandex.ru",
     authentication: "plain",
     enable_starttls_auto: true,
