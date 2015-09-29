@@ -69,8 +69,8 @@ Rails.application.configure do
     domain: "yandex.ru",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: ENV["YANDEX_USERNAME"],
+    password: ENV["YANDEX_PASSWORD"]
   }
 
   config.action_mailer.delivery_method = :smtp
