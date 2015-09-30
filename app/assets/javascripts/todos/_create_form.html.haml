@@ -22,7 +22,8 @@
               is_open: "opened",
               max_date: "maxDate",
               min_date: "minDate",
-              ng_model: "todo.due_date"}}/
+              ng_model: "todo.due_date",
+              ng_blur: "fixPastDate()"}}/
               %span.input-group-btn
                 %button.btn.btn-default{type: "button", data: {ng_click: "open($event)"}}
                   %i.glyphicon.glyphicon-calendar

@@ -13,6 +13,12 @@ angular.module('todoList').controller 'EditTodoCtrl', [
     $scope.todo.due_date = new Date(todo.due_date)
     $scope.minDate = new Date
 
+    $scope.fixPastDate = () ->
+      if ($scope.todo.due_date < new Date() && new Date(todo.due_date) <= new Date())
+        $scope.todo.due_date = new Date(todo.due_date)
+      return
+      return
+
     $scope.resetForm = ->
       $state.reload()
       return
