@@ -16,6 +16,8 @@ angular.module('todoList').controller 'EditTodoCtrl', [
     $scope.fixPastDate = () ->
       if ($scope.todo.due_date < new Date() && new Date(todo.due_date) <= new Date())
         $scope.todo.due_date = new Date(todo.due_date)
+      else if ($scope.todo.due_date < new Date())
+          $scope.todo.due_date = new Date()
       return
       return
 
