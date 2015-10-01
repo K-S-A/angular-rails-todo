@@ -12,6 +12,7 @@ angular.module('todoList').controller 'NavCtrl', [
       return
     $scope.$on 'devise:new-registration', (e, user) ->
       $rootScope.user = user
+      $rootScope.alertMsg = 'You\'re registered. Confirmation message sent to '+ user.email + '. Please, confirm your email in the next 7 days.'
       return
     $scope.$on 'devise:login', (e, user) ->
       $rootScope.user = user
@@ -20,7 +21,7 @@ angular.module('todoList').controller 'NavCtrl', [
       userFullName = $rootScope.user.first_name + ' ' + $rootScope.user.last_name
       $rootScope.user = null
       todos.getAll()
-      alert userFullName + ', you\'re signed out now.'
+      $rootScope.alertMsg = userFullName + ', you\'re signed out now.'
       return
     return
 ]

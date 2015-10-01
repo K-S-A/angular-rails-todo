@@ -4,7 +4,7 @@
   {{message}} (Click here to see Todos List)
 .panel.panel-info
   .panel-heading
-    %form{name: "todoForm", role: "form", data: {ng_submit: "addTodo()"}, novalidate: true}
+    %form{name: "todoForm", role: "form", novalidate: true, data: {ng_submit: "addTodo()"}}
       %fieldset{data: {ng_disabled: "notice"}}
         .row
           / Title
@@ -16,14 +16,15 @@
           .form-group.col-md-6{data: {ng_class: "valClass('date')"}}
             %label{for: "date"} Due Date:
             .input-group
-              %input#date.form-control{close_text: "Close", name: "date", type: "text", required: true, data: {date_disabled: "disabled(date, mode)",
-              datepicker_options: "dateOptions",
-              datepicker_popup: "dd-MM-yyyy",
-              is_open: "opened",
-              max_date: "maxDate",
-              min_date: "minDate",
-              ng_model: "todo.due_date",
-              ng_blur: "fixPastDate()"}}/
+              %input#date.form-control{close_text: "Close", name: "date", type: "text", required: true,
+              data: {date_disabled: "disabled(date, mode)",
+                     datepicker_options: "dateOptions",
+                     datepicker_popup: "dd-MM-yyyy",
+                     is_open: "opened",
+                     max_date: "maxDate",
+                     min_date: "minDate",
+                     ng_model: "todo.due_date",
+                     ng_blur: "fixPastDate()"}}/
               %span.input-group-btn
                 %button.btn.btn-default{type: "button", data: {ng_click: "open($event)"}}
                   %i.glyphicon.glyphicon-calendar
@@ -43,7 +44,10 @@
           / Description
           .form-group.col-md-12{data: {ng_class: "valClass('description')"}}
             %label{for: "description"} Description:
-            %textarea.form-control{name: "description", rows: "3", required: true, data: {ng_maxlength: "255", ng_minlength: "10", ng_model: "todo.description"}}
+            %textarea.form-control{name: "description", rows: "3", required: true,
+            data: {ng_maxlength: "255",
+                   ng_minlength: "10",
+                   ng_model: "todo.description"}}
             %p.text-danger{ng_show: "todoForm.description.$error.required && todoForm.description.$dirty"} Description is required.
             %p.text-danger{ng_show: "todoForm.description.$error.minlength"} Description must contain at least 10 characters.
             %p.text-danger{ng_show: "todoForm.description.$error.maxlength"} Descriptions maximum size is 255 characters.

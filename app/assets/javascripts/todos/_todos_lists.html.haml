@@ -20,3 +20,13 @@
       dnd_dragstart: "orderList(null, item);",
       dnd_effect_allowed: "move",
       dnd_moved: "todos.splice($index, 1)"}}
+.row{data: {ng_hide: "user"}}
+  .col-md-6
+    .panel.panel-success
+      .panel-heading Content of "application.js"
+      .panel-body= Haml::Engine.new(File.read(Rails.root.join("app", "assets", "javascripts", "application.js")).gsub(/\/\/\=/, "%p //=")).render
+  .col-md-6
+    .panel.panel-success
+      .panel-heading Content of "Gemfile"
+      .panel-body= Haml::Engine.new(File.readlines(Rails.root.join("Gemfile")).map{|line| "%p "+ line}.join("")).render
+

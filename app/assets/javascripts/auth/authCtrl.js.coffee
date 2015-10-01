@@ -3,6 +3,10 @@ angular.module('todoList').controller 'AuthCtrl', [
   '$state'
   'Auth'
   ($scope, $state, Auth) ->
+    $scope.user = {}
+    $scope.valClass = (item) ->
+      o = if $scope.loginForm[item].$dirty then (if $scope.loginForm[item].$valid then 'has-success' else 'has-error') else ''
+      o
 
     $scope.login = ->
       Auth.login($scope.user).then ->

@@ -2,15 +2,9 @@
   .panel-heading
     %h1 Register
   .panel-body
-    %form{data: {ng_submit: "register()"}}
+    %form{name: "loginForm", role: "form", novalidate: true, data: {ng_submit: "register()"}}
       .row
-        .col-md-6
-          .input-group.form-group
-            %label{for: "email"} E-mail:
-            %input#email.form-control{type: "email", placeholder: "Email", data: {ng_model: "user.email"}}/
-          .input-group.form-group
-            %label{for: "password"} Password:
-            %input#password.form-control{type: "password", placeholder: "Password", data: {ng_model: "user.password"}}/
+        .col-md-6{data: {ng_include: "'auth/_form.html'"}}
         .col-md-6
           .input-group.form-group
             %label{for: "firstname"} First Name:
@@ -18,4 +12,4 @@
           .input-group.form-group
             %label{for: "lastname"} Last Name:
             %input#lastname.form-control{type: "text", placeholder: "Last Name", data: {ng_model: "user.last_name"}}/
-      %input.btn.btn-default.btn-lg{type: "submit", value: "Register"}
+      %input.btn.btn-default.btn-lg{type: "submit", value: "Register", data: {ng_disabled: "loginForm.$invalid"}}
