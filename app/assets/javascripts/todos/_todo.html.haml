@@ -1,10 +1,11 @@
 .panel-heading{data: {ng_click: "todoShow(todo)", ng_mouseenter: "todo.showPanel=true", ng_mouseleave: "todo.showPanel=false"}}
   .row
     .col-md-9
-      %strong{data: {ng_click: "$event.stopPropagation()"}}
+      %strong.checkbox.checkbox-inline.checkbox-primary{data: {ng_click: "$event.stopPropagation()"}}
         %span
           %input{type: "checkbox", data: {ng_model: "todo.selected"}}/
-        %a{href: "#/todos/{{todo.id}}"} {{todo.title}}
+          %label
+          %a{href: "#/todos/{{todo.id}}"} {{todo.title}}
         %span.btn.btn-xs.btn-danger{data: {ng_click: "destroyTodo(todo.id, $event)", ng_show: "todo.showPanel"}} Destroy
         %span.btn.btn-xs.btn-primary{data: {ui_sref: "editTodo({id: todo.id})", ng_show: "todo.showPanel"}} Edit
     .col-md-2
