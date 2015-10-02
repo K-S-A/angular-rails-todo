@@ -5,7 +5,7 @@ feature "Homepage" do
     visit "/"
     expect(page).to have_content 'Home'
     expect(page).to have_content 'Log In'
-    expect(page).to have_content 'Register'
+    expect(page).to have_content 'Todo List'
   end
 
 end
