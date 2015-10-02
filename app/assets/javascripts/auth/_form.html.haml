@@ -2,7 +2,7 @@
   %label{for: "email"} E-mail:
   %input#email.form-control{name: "email", type: "email", placeholder: "Email", required: true,
   data: {ng_model: "user.email",
-         ng_pattern: "/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"}}/
+         ng_pattern: "/^([a-z0-9]+@[a-z]+\.[a-z]{2,5})$/"}}/
   %p.text-danger{data: {ng_show: "!loginForm.email.$viewValue && loginForm.email.$dirty"}} E-mail is required.
   %p.text-danger{data: {ng_show: "loginForm.email.$invalid && loginForm.email.$dirty"}} Please enter correct e-mail.
 .input-group.form-group{data: {ng_class: "valClass('password')"}}
