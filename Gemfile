@@ -19,6 +19,7 @@ gem 'devise', '~> 3.5.1'
 gem 'rails_12factor', '~> 0.0.3', group: :production
 gem 'coffee-rails', '~> 4.1.0'
 gem 'font-awesome-rails', '~> 4.4.0.0'
+gem 'rails_admin', '~> 0.7.0'
 
 group :development, :test do
   gem 'byebug'

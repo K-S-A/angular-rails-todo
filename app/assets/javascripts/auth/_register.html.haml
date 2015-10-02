@@ -2,7 +2,7 @@
   .panel-heading
     %h1 Register
   .panel-body
-    %form{name: "loginForm", role: "form", novalidate: true, data: {ng_submit: "register()"}}
+    %form#loginForm{name: "loginForm", role: "form", novalidate: true, data: {ng_submit: "register()"}}
       .row
         .col-md-6{data: {ng_include: "'auth/_form.html'"}}
         .col-md-6
